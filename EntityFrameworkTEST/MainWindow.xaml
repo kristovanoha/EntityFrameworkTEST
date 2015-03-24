@@ -1,8 +1,23 @@
-﻿<Window x:Class="EntityFrameworkTEST.MainWindow"
+﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:EntityFrameworkTEST" mc:Ignorable="d" x:Class="EntityFrameworkTEST.MainWindow"
+        Title="MainWindow" Height="350" Width="525" Loaded="Window_Loaded">
+    <Window.Resources>
+        <CollectionViewSource x:Key="testViewSource" d:DesignSource="{d:DesignInstance {x:Type local:Test}, CreateList=True}"/>
+    </Window.Resources>
+    <Grid DataContext="{StaticResource testViewSource}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="322*"/>
+            <ColumnDefinition Width="195*"/>
+        </Grid.ColumnDefinitions>
+        <DataGrid x:Name="testDataGrid" AutoGenerateColumns="False" Grid.ColumnSpan="2" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="61,48,56,72" RowDetailsVisibilityMode="VisibleWhenSelected">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="idColumn" Binding="{Binding Id}" Header="Id" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="jmenoColumn" Binding="{Binding Jmeno}" Header="Jmeno" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="test1Column" Binding="{Binding Test1}" Header="Test 1" Width="SizeToHeader"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
     </Grid>
 </Window>

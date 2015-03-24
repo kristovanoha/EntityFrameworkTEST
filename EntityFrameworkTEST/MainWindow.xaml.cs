@@ -39,18 +39,7 @@ namespace EntityFrameworkTEST
             CollectionViewSource viewSource =((CollectionViewSource)(this.FindResource("viewSource")));
             _context.Test2.Load();
             viewSource.Source = _context.Test2.Local;
-            //// Load data by setting the CollectionViewSource.Source property:
-            //englishViewSource.Source = _context.Test.Local;
-            ////gridTest.DataContext = _context.Test;
-            ////gridTest.
-
-            //var a = 4;
-            //System.Windows.Data.CollectionViewSource testViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("testViewSource")));
-            // Load data by setting the CollectionViewSource.Source property:
-            // testViewSource.Source = [generic data source]
-            System.Windows.Data.CollectionViewSource test2ViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("test2ViewSource")));
-            // Load data by setting the CollectionViewSource.Source property:
-            // test2ViewSource.Source = [generic data source]
+      
         }
     }
 

@@ -26,5 +26,6 @@ namespace EntityFrameworkTEST
         }
     
         public virtual DbSet<Test> Test { get; set; }
+        public virtual DbSet<Test2> Test2 { get; set; }
     }
 }

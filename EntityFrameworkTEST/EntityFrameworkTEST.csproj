@@ -85,6 +85,9 @@
     <Compile Include="Test.cs">
       <DependentUpon>ModelEFslovnik.tt</DependentUpon>
     </Compile>
+    <Compile Include="Test2.cs">
+      <DependentUpon>ModelEFslovnik.tt</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -145,6 +148,7 @@
     </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Test.datasource" />
+    <None Include="Properties\DataSources\Test2.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

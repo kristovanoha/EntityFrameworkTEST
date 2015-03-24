@@ -5,17 +5,24 @@
         Title="MainWindow" Height="350" Width="525" Loaded="Window_Loaded">
     <Window.Resources>
         <CollectionViewSource x:Key="testViewSource" d:DesignSource="{d:DesignInstance {x:Type local:Test}, CreateList=True}"/>
+        <CollectionViewSource x:Key="viewSource" d:DesignSource="{d:DesignInstance {x:Type local:Test2}, CreateList=True}"/>
     </Window.Resources>
     <Grid DataContext="{StaticResource testViewSource}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="322*"/>
             <ColumnDefinition Width="195*"/>
         </Grid.ColumnDefinitions>
-        <DataGrid x:Name="testDataGrid" AutoGenerateColumns="False" Grid.ColumnSpan="2" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="61,48,56,72" RowDetailsVisibilityMode="VisibleWhenSelected">
+        <DataGrid x:Name="testDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="10,48,56,72" RowDetailsVisibilityMode="VisibleWhenSelected" Grid.Column="1">
             <DataGrid.Columns>
                 <DataGridTextColumn x:Name="idColumn" Binding="{Binding Id}" Header="Id" Width="SizeToHeader"/>
                 <DataGridTextColumn x:Name="jmenoColumn" Binding="{Binding Jmeno}" Header="Jmeno" Width="SizeToHeader"/>
                 <DataGridTextColumn x:Name="test1Column" Binding="{Binding Test1}" Header="Test 1" Width="SizeToHeader"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid x:Name="test2DataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding Source={StaticResource viewSource}}" Margin="48,30,114,151" RowDetailsVisibilityMode="VisibleWhenSelected">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="idColumn1" Binding="{Binding Id}" Header="Id" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="test21Column" Binding="{Binding Test21}" Header="Test 21" Width="SizeToHeader"/>
             </DataGrid.Columns>
         </DataGrid>
 

@@ -3,8 +3,8 @@
 //     This code was generated from a template.
 //
 //     Manual changes to this file may cause unexpected behavior in your application.
-//     Manual changes to this file will be overwrdfgitten if the code is regenerated.
-// </auto-generated>
+//     Manual changes to this file will be overwritten if the code is regenerated.
+// </auto-generate d>
 //------------------------------------------------------------------------------
 
 namespace EntityFrameworkTEST
@@ -12,10 +12,9 @@ namespace EntityFrameworkTEST
     using System;
     using System.Collections.Generic;
     
-    public partial class Test
+    public partial class Test2
     {
         public int Id { get; set; }
-        public string Jmeno { get; set; }
-        public Nullable<decimal> Test1 { get; set; }
+        public string Test21 { get; set; }
     }
 }
